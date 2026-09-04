@@ -1,0 +1,42 @@
+name: Create Linear issue
+
+# Requires repo secret LINEAR_API_KEY. Run via Actions tab -> this workflow
+# -> "Run workflow", or `gh workflow run create-linear-issue.yml -f ...`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: Linear issue title without the COD- prefix
+        required: true
+        type: string
+      description:
+        description: Linear issue description
+        required: false
+        type: string
+      project_slug:
+        description: Linear project slugId (Settings -> ... -> Copy link, the last URL segment)
+        required: true
+        type: string
+      project_name:
+        description: Linear project name (fallback lookup if slug doesn't match)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create Linear issue
+        env:
+          LINEAR_API_KEY: ${{ secrets.LINEAR_API_KEY }}
+          LINEAR_TEAM_KEY: COD
+          LINEAR_PROJECT_SLUG: ${{ inputs.project_slug }}
+          LINEAR_PROJECT_NAME: ${{ inputs.project_name }}
+          LINEAR_ISSUE_TITLE: ${{ inputs.title }}
+          LINEAR_ISSUE_DESCRIPTION: ${{ inputs.description }}
+        run: python3 .github/scripts/create_linear_issue.py
