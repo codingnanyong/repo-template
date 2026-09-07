@@ -10,6 +10,7 @@ codingnanyong's standard starting point for new repos: Linear/GitHub-issue-gated
 - `.github/workflows/notify-slack-on-merge.yml` — posts a summary to Slack when a PR merges into `develop`/`main`.
 - `AGENTS.md` / `CLAUDE.md` — agent role & rules (Claude reads `CLAUDE.md`, which imports `AGENTS.md`; Codex and other tools read `AGENTS.md` directly).
 - `LICENSE` (MIT default — swap for an "All Rights Reserved" style notice if this is a content-only repo), `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md`, `SECURITY.md`, `.github/pull_request_template.md`.
+- `docs/kor/GIT_WORKFLOW.md` / `docs/eng/GIT_WORKFLOW.md` — human-readable branch/PR/Linear policy (same policy `AGENTS.md` and `pr-policy.yml` enforce, written out for people). Add project-specific exceptions after it rather than duplicating the shared parts.
 
 ## Setup checklist for a new repo made from this template
 
