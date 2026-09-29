@@ -6,6 +6,11 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Agent-specific local overrides
+CLAUDE.local.md
+.claude/settings.local.json
+*.local.md
+
 # Env & secrets
 .env
 .env.*
