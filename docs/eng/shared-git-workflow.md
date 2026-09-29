@@ -1,4 +1,4 @@
-# Git Branch Strategy
+# Shared Git Branch Strategy
 
 <!-- This is repo-template's standard policy. If the project has its own
 exceptions (binary-file commit rules, release tagging conventions, etc.),
