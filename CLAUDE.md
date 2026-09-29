@@ -2,8 +2,17 @@
 
 @AGENTS.md
 
-The rules above (`AGENTS.md`) are the single source of truth for how any agent — Claude or Codex — should operate in this repo. Keep that file up to date rather than duplicating its content here; this file only adds Claude-specific framing that doesn't belong in a tool-agnostic rules file.
+`AGENTS.md` is the single source of truth for rules shared by Claude, Codex, and
+humans. Keep shared policy there rather than duplicating it in this file.
 
-<!-- Add Claude-specific framing here if needed (e.g. where Claude fits in
-a larger human workflow). Most repos won't need anything beyond the
-@AGENTS.md import above. -->
+Claude leads documentation and written product artifacts. For those tasks, use
+`skills/claude-documentation/SKILL.md`. When an image is required, define its
+purpose, copy, placement constraints, and accessibility intent in
+`templates/shared-handoff.md`, then leave creation or editing of the asset to Codex. Claude
+may still implement and review code as part of shared feature work.
+
+Shared components live in the root `skills/`, `agents/`, `commands/`, `hooks/`,
+`rules/`, `plugins/`, `output-styles/`, `statusline/`, and `templates/`
+directories. `.claude/` contains only Claude Code runtime settings. It is not
+the canonical home of shared workflows. Read the root folders directly; do not
+create duplicate copies under `.claude/`.
